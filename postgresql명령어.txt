@@ -1,0 +1,26 @@
+-로그인
+sudo -u postgres psql
+sudo -u postgres psql -d 이름
+
+-간단 내부 명령
+나가기: \q
+db확인: \l
+
+-sql
+#db
+db 생성: create database 이름;
+db 삭제: drop database 이름;
+db 확인(내가 만든것만): SELECT datname FROM pg_database WHERE datistemplate = false;
+
+
+#table
+테이블 생성: create table test(이름 자료형 제약,~~~);
+테이블 삭제: drop table 테이블이름;
+테이블 존재 확인: SELECT * FROM pg_catalog.pg_tables where tablename='이름';
+
+
+# crud
+삽입: INSERT INTO 테이블이름(속성, ) VALUES(값, );
+삭제:delete from 테이블이름 where 조건;
+갱신: update 테이블이름 set 속성=변할값, where 조건;
+검색: select 속성, from 테이블;

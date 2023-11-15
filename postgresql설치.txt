@@ -1,0 +1,34 @@
+
+#우분투 설치
+sudo apt-get install postgresql postgresql-contrib
+psql --version
+
+#삭제
+sudo apt-get purge postgresql 
+
+
+#포그트그레스 루트 로그인
+sudo -i -u postgres   
+psql   
+(한번에 로그인  sudo -u postgres psql  )
+(나움  \q)
+(나옴 exit)
+
+#외부포트 열기
+netstat -ntlp
+cd /etc/postgresql/10/main
+vi +/"listen_addresses" postgresql.conf   (  listen_addresses = '원하는 ip' )
+vi +/"#IPv4 local connections" pg_hba.conf  (#IPv4 local connections의 host의 어드레스를 0.0.0.0/0  )
+sudo service postgresql restart
+
+sudo systemctl|grep postgres  (여기서 확인)
+sudo systemctl restart postgresql.service
+netstat -nap | grep 5432(포트가 열렸는지 확인)
+
+#리눅스 사용자 postgres 비번 변경(선택)
+sudo passwd postgres
+
+#사용자 확인/사용자 생성/비밀번호 변경(선택)
+\du(  SELECT * FROM PG_USER;   )
+CREATE USER 유저이름 PASSWORD '비번';
+alter user postgres with password '비번';

@@ -1,0 +1,15 @@
+#apt 업데이트
+sudo apt-get update
+
+#다운로드
+sudo apt install [이름] -y
+
+#프로세스 확인
+ps 
+ps -f
+#프로세스 죽이기
+kill -9 (PID)
+
+#필터링 출력
+~~~(명령여)~~~ | grep 이름
+

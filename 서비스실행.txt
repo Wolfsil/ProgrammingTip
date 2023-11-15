@@ -1,0 +1,10 @@
+#서비스 목록/ 서비스 시작/정지/재시작/서비스 등록/해제
+service --status-all
+systemctl start 이름
+systemctl stop 이름
+systemctl restart 이름
+systemctl enable 이름
+systemctl disable 이름
+
+#서비스 만든후 새로운 서비스가 생겨났음을 알림
+systemctl daemon-reload

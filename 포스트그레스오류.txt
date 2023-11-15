@@ -1,0 +1,9 @@
+#에러: 로그인 진입이 안될때
+"connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?"
+의 경우
+ps -ef | grep post  (프로세스 확인, 포스트그레스가 없을 확률 다분)
+systemctl status postgresql.service  (서비스확인)
+systemctl start postgresql.service  (서비스 구동)
+
+#명령어가 반응안할때
+" ; "은 제대로 붙였는지 확인
